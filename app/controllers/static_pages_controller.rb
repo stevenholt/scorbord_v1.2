@@ -8,4 +8,5 @@ class StaticPagesController < ActionController::Base
 
 	def about
 	end
+	
 end

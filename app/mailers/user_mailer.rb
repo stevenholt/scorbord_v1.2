@@ -1,4 +1,4 @@
-class UserMailer < ApplicationMailer
+class UserMailer < ApplicationMailer::Base
   default from: "support@scorbord.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml

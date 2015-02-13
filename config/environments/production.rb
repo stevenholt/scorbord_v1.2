@@ -65,15 +65,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = 'polar-fjord-5660.herokuapp.com'
+  protocol = 'https'
   config.action_mailer.default_url_options = { host: host }
   config.action_mailer.smtp_settings = {
     :address    => "smtp.mandrillapp.com",
     :port       => 587, #ports 25 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name  => "app33871155@heroku.com",
-    :password   => "UFO-JHYAVNi5xRI0XOmtig", # SMTP password is any valid API key
-    :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain     => 'https://polar-fjord-5660.herokuapp.com', #your domain to identify your server when connecting
+    :user_name  => ENV['MANDRILL_USERNAME'],
+    :password   => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
+    :authentication => 'plain', # Mandrill supports 'plain' or 'login'
+    :domain     => 'polar-fjord-5660.herokuapp.com', #your domain to identify your server when connecting
     } 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

@@ -73,7 +73,7 @@ Rails.application.configure do
     :user_name  => ENV['MANDRILL_USERNAME'],
     :password   => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
     :authentication => 'plain', # Mandrill supports 'plain' or 'login'
-    :domain     => 'polar-fjord-5660.herokuapp.com', #your domain to identify your server when connecting
+    :domain     => 'https://polar-fjord-5660.herokuapp.com', #your domain to identify your server when connecting
     } 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

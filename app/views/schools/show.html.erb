@@ -1,0 +1,32 @@
+<% provide(:title, @school.short_name) %>
+<div class="row">
+	<aside class="col-md-4">
+		<section class="user_info">
+			<h1>
+				<%= @school.initials %> <%= @school.mascot %>
+			</h1>
+			<p>
+				<%= @school.full_name %>
+				<br>
+				<%= @school.short_name %>
+			</p>
+			<p>
+				<%= @school.street %>
+				<br>
+				<%= @school.city%>, <%= @school.region %> <%= @school.postal_code %>
+			</p>
+		</section>
+		<section class="stats">
+			
+		</section>
+	</aside>
+	<div class="col-md-8">
+		<p>This is where all the dynamic stuff will go</p>
+		<p>
+			<ul>
+				<li>Teams</li>
+				<li>People</li>
+			</ul>
+		</p>
+	</div>
+</div>

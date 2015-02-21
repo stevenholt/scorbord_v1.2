@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sport_program: 
+  level: MyString
+  classification: MyString
+  region: MyString
+
+two:
+  sport_program: 
+  level: MyString
+  classification: MyString
+  region: MyString

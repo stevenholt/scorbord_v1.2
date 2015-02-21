@@ -1,0 +1,26 @@
+<% provide(:title, 'New Team') %>
+<h1>Create a new team</h1>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<%= form_for(Team.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+
+			<%= hidden_field_tag 'team[sport_program_id]', @sport_program.id %>
+
+
+			<%= f.label :level, "Competition Level" %>
+			<%= f.text_field :level, class: 'form_control' %>
+
+			<%= f.label :classification %>
+			<%= f.text_field :classification, class: 'form_control' %>
+
+			<%= f.label :region %>
+			<%= f.text_field :region, class: 'form_control' %>
+
+			<%= f.submit "Create Team", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

@@ -25,7 +25,14 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
-  resources :schools
+  resources :sport_programs do
+    resources :teams
+  end
+  resources :schools do
+    resources :sport_programs
+  end
+  resources :teams,               only: [:new, :create, :show]
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

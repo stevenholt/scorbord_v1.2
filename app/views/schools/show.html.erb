@@ -16,11 +16,25 @@
 				<%= @school.city%>, <%= @school.region %> <%= @school.postal_code %>
 			</p>
 		</section>
-		<section class="stats">
-			
+		<section class="programs">
+			<h1><%= @school.initials %> Programs</h1>
+			<ul>
+				<% @school.sport_programs.each do |sp| %>
+					<%= link_to sp.sport, [sp.school, sp] %>
+
+					<li><a href='#'><%= sp.school.initials %> <%= sp.sport %></a></li>
+				<% end %>
+			</ul>
 		</section>
 	</aside>
 	<div class="col-md-8">
+		<%= form_for(SportProgram.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<div><%= hidden_field_tag :school, @school.id %>
+				<%= hidden_field_tag :sport, "Football" %></div>
+			<%= f.submit "Create a Football Program", class: "btn btn-primary" %>
+		<% end %>
+
 		<p>This is where all the dynamic stuff will go</p>
 		<p>
 			<ul>

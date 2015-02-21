@@ -1,0 +1,10 @@
+<%= @sportprogram.school.full_name %> <%= @sportprogram.sport %>
+
+<%= link_to "Add a Team", new_sport_program_team_path(@sport_program) %>
+<br><br>
+<h3>TEAMS</h3>
+<ul>
+<% @sportprogram.teams.each do |eachteam| %>
+	<li><%= eachteam.level %> <%= eachteam.sport_program.sport %> <%= link_to 'view', eachteam %></li>
+<% end %>
+</ul>

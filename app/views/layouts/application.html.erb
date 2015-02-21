@@ -9,11 +9,26 @@
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
-		<div class="container">
-			<% flash.each do |message_type, message| %>
-				<div class="alert alert-<%= message_type %>"><%= message %></div>
-			<% end %>
-			<%= yield %>
+		<% flash.each do |message_type, message| %>
+			<div class="alert alert-<%= message_type %>"><%= message %></div>
+		<% end %>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+					<nav>
+						<ul class="nav nav-sidebar">
+							<li><%= link_to current_team.sport_program.school.initials+" "+current_team.level+" "+current_team.sport_program.sport, '#' %></li>
+							<li><%= link_to "Roster", '#' %></li>
+							<li><%= link_to "Workouts", '#' %></li>
+							<li><%= link_to "Practices", '#' %></li>
+							<li><%= link_to "Games", '#' %></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-md-8">
+					<%= yield %>
+				</div>
+			</div>
 			<%= render 'layouts/footer' %>
 			<%= debug(params) if Rails.env.development? %>
 		</div>

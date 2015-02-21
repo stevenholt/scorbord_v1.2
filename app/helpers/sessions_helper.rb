@@ -59,4 +59,8 @@ module SessionsHelper
 	def store_location
 		session[:forwarding_url] = request.url if request.get?
 	end
+
+	def current_team
+		@current_team = Team.find(1)
+	end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217120201) do
+ActiveRecord::Schema.define(version: 20150219235457) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -46,6 +46,22 @@ ActiveRecord::Schema.define(version: 20150217120201) do
     t.text     "postal_code"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "sport_programs", force: :cascade do |t|
+    t.integer  "school_id"
+    t.text     "sport"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.integer  "sport_program_id"
+    t.string   "level"
+    t.string   "classification"
+    t.string   "region"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|

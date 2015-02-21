@@ -1,4 +1,5 @@
 class SchoolsController < ApplicationController
+	before_action :set_school, only: [:show, :edit, :update, :destroy]
 	
 	def index
 	    @schools = School.paginate(page: params[:page])
@@ -45,6 +46,10 @@ class SchoolsController < ApplicationController
 	end
 
 	private
+
+		def set_school
+			@school = School.find(params[:id])
+		end
 
 		def school_params
 			params.require(:school).permit(:full_name, :short_name, :initials, :mascot, :street, :city, :region, :postal_code)
